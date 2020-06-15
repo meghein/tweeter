@@ -7,6 +7,7 @@ The inner content should not be touching the viewport edge on any side and shoul
 
 nav {
   display: flex;
+  justify-content: space-between;
   height: 120px;
   color: #ffffff;
   background-color: #4056A1;
@@ -14,7 +15,14 @@ nav {
  }
 
 nav span {
-  font-family: 'Bungee', cursive;
   margin: 1.5em;
+}
+
+.title {
+  font-family: 'Bungee', cursive;
+}
+
+.tweet {
+  font-family: 'Source Sans Pro', sans-serif; 
 }
 
