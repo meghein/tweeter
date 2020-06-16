@@ -1,23 +1,12 @@
-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-bottom: 10em;
-}
-
 textarea {
-  display: flex;
+  width: 100%;
   border-width: 0px;
   background-color: inherit;
 }
 
 textarea#tweet-text {
-  display: flex;
+  border-bottom-style: solid;
   border-bottom-width: 5px;
-  border-bottom-color: #4056A1;
-  font-size: 20px;
-  height: 32px;
-  margin-bottom: .5em;
 }
 
 .footer {
@@ -30,6 +19,10 @@ textarea#tweet-text {
 .footer button {
   background-color: #4056A1;
   color: #ffffff;
-  padding: 2px;
-  border: 5px
+  font-size: 20px;
+  border: 5px solid #4056A1
+}
+
+output.counter.error {
+  color: 	#FF0000;
 }

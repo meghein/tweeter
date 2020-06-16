@@ -1,0 +1,40 @@
+article {
+  display: flex;
+  flex-direction: column;
+  background-color: inherit;
+  border: 5px solid;
+  padding: 5px;
+  margin: 1em;
+  height: 100%;
+
+}
+
+article header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: inherit;
+  height: 20%;
+}
+
+article .quote {
+  border-bottom: 5px solid;
+  height: 70%
+}
+
+article footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 10%;
+}
+
+article footer h6{
+  margin-right: auto
+}
+
+article footer button{
+  border: none;
+  background-color: inherit;
+  color: inherit;
+}

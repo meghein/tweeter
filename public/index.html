@@ -6,24 +6,78 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+
+
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
+    <script src="/vendor/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script type="text/javascript" src="/scripts/auto-expand-textarea.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span class="title">tweeter</span>
+      <span class="tweet"><b>Write</b> a tweet</span>
     </nav>
 
+    <header class="profile">
+      <div>
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div>
+          <h2>Your Name</h2>
+      </div>
+  </header>
+
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+
+      <!-- Form to input new tweet -->
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="footer">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+
+      <!-- Posted tweets -->
+      <section>
+        <article id="tweet">
+          <header>
+            <h4>NAME</h4>
+            <h5>@handle</h5>
+          </header>
+          <section class="quote">quote goes here</section>
+          <footer>
+            <h6>date</h6>
+            <button type="retweet"><i class="fa fa-retweet" aria-hidden="true"></i></button>
+            <button type="like"><i class="fa fa-heart" aria-hidden="true"></i></button>
+            <button type="flag"><i class="fa fa-flag" aria-hidden="true"></i></button>
+          </footer>
+        </article>
+      </section>
+
+    </main>
   </body>
 </html>
