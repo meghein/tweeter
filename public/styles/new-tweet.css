@@ -1,0 +1,35 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10em;
+}
+
+textarea {
+  display: flex;
+  border-width: 0px;
+  background-color: inherit;
+}
+
+textarea#tweet-text {
+  display: flex;
+  border-bottom-width: 5px;
+  border-bottom-color: #4056A1;
+  font-size: 20px;
+  height: 32px;
+  margin-bottom: .5em;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
+
+.footer button {
+  background-color: #4056A1;
+  color: #ffffff;
+  padding: 2px;
+  border: 5px
+}

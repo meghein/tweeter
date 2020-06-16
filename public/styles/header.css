@@ -14,11 +14,6 @@ header {
   background-image: url("/images/arches.png");
 }
 
-/* header img {
-  display: flex;
-  justify-content: center;
-}
-
 header h2 {
-  display: flex;
-} */
+  margin-top: 0px;
+}
