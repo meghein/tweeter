@@ -4,32 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1592223195
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1592423195
-  }
-]
-
 const renderTweets = function(tweets) {
   const tweetsArr = [];
   // loops through tweets
@@ -52,7 +26,7 @@ const createTweetElement = function(tweet) {
       </header>
       <section class="quote">"${tweet.content.text}"</section>
       <footer>
-        <h6>${moment(new Date(tweet.created_at) * 1000).fromNow()}</h6>
+        <h6>${moment(new Date(tweet.created_at)).fromNow()}</h6>
         <button type="retweet"><i class="fa fa-retweet" aria-hidden="true"></i></button>
         <button type="like"><i class="fa fa-heart" aria-hidden="true"></i></button>
         <button type="flag"><i class="fa fa-flag" aria-hidden="true"></i></button>
@@ -62,18 +36,50 @@ const createTweetElement = function(tweet) {
   return $tweetElement;
 };
 
-renderTweets(data);
-
 // const generateRandomProfile = function(quote) {
 //   const randomProfile = `{
 //     user: {
-//     name: "${}",
+//     name: "name",
 //     avatars: "https://i.imgur.com/nlhLi3I.png",
-//     handle: "@rd" },
+//     handle: "@handle" },
 //     content: {
-//       text: 
+//       text: ${quote}
 //     },
-//     "created_at": 1461113959088
-//   }`
-// }
+//     "created_at": ${new Date().getTime()}
+//   }`;
+//   return randomProfile;
+// };
 
+const loadTweets = function() {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET',
+    dataType: 'JSON'
+  }).then(function(response) {
+    const reverseData = response.reverse()
+    // console.log("loadTweets -> reverseData", reverseData)
+    renderTweets(reverseData)
+  })
+};
+
+$(document).ready(() => {
+  loadTweets();
+  $("form").on("submit", event => {
+    event.preventDefault();
+    // const text = $("#tweet-text").val();
+    // if (tweetValidation(text)) {
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: $("form").serialize(),
+      dataType: "text"
+    }).then(() => {
+      $("#tweets-container").empty()
+      $("form").trigger('reset');
+      $(".counter").text('140')
+      loadTweets()
+      console.log('Ajax request success')
+    });
+  // }
+  })
+})
