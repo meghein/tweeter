@@ -1,4 +1,5 @@
 textarea {
+  overflow: hidden;
   width: 100%;
   border-width: 0px;
   background-color: inherit;
@@ -7,6 +8,12 @@ textarea {
 textarea#tweet-text {
   border-bottom-style: solid;
   border-bottom-width: 5px;
+  font-size: 20px;
+}
+
+.new-tweet h4 {
+  margin-top: 5px;
+  margin-bottom: 2px;
 }
 
 .footer {

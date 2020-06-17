@@ -4,8 +4,8 @@ article {
   background-color: inherit;
   border: 5px solid;
   padding: 5px;
-  margin: 1em;
-  height: 100%;
+  margin: 2px;
+  margin-bottom: 1em;
 
 }
 
@@ -14,20 +14,28 @@ article.shadow {
 }
 
 article header {
+  height: 20%;
+  margin: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   background-color: inherit;
-  height: 20%;
+}
+
+article header img {
+  height: 50px
 }
 
 article header h5 {
-  display:none;
+  display: none;
 }
 
 article .quote {
+  display: flex;
+  align-items: baseline;
   border-bottom: 5px solid;
-  height: 70%
+  height: 150%;
 }
 
 article footer {
