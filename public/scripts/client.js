@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const renderTweets = function(tweets) {
+ const renderTweets = function(tweets) {
   const tweetsArr = [];
   // loops through tweets
   for (let tweet of tweets) {
@@ -24,7 +24,7 @@ const createTweetElement = function(tweet) {
         <h4><img src="${tweet.user.avatars}">${tweet.user.name}</h4>
         <h5>${tweet.user.handle}</h5>
       </header>
-      <section class="quote">"${tweet.content.text}"</section>
+      <section class="quote">"${escape(tweet.content.text)}"</section>
       <footer>
         <h6>${moment(new Date(tweet.created_at)).fromNow()}</h6>
         <button type="retweet"><i class="fa fa-retweet" aria-hidden="true"></i></button>
@@ -57,29 +57,49 @@ const loadTweets = function() {
     dataType: 'JSON'
   }).then(function(response) {
     const reverseData = response.reverse()
-    // console.log("loadTweets -> reverseData", reverseData)
     renderTweets(reverseData)
   })
 };
+
+const tweetValidation = function(text) {
+  if (!text) {
+    alert("Invalid or Missing Text!")
+    return false;
+  } else if (text.length > 140) {
+    alert("Text too long!");
+    return false;
+  } else {
+    return true;
+  }
+}
+
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 
 $(document).ready(() => {
   loadTweets();
   $("form").on("submit", event => {
     event.preventDefault();
-    // const text = $("#tweet-text").val();
-    // if (tweetValidation(text)) {
+    const text = $("#tweet-text").val();
+    if (tweetValidation(text)) {
     $.ajax({
       type: "POST",
       url: "/tweets",
-      data: $("form").serialize(),
+      data: $("#tweet-text").serialize(),
       dataType: "text"
     }).then(() => {
       $("#tweets-container").empty()
       $("form").trigger('reset');
       $(".counter").text('140')
       loadTweets()
-      console.log('Ajax request success')
+      console.log('Ajax request successful. Client input posted')
     });
-  // }
+    } else {
+      console.log('Client input invalid')
+    }
   })
 })

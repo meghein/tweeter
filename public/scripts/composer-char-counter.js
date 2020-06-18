@@ -10,10 +10,10 @@ $(document).ready(function(){
     //change CSS to turn counter to red when in the negative.
     if (counter < 0) {
       $("output.counter", $(this).parents("form")).addClass("error");
-      $("button", $(this).parents("form")).prop("disabled", true);
+      // $("button", $(this).parents("form")).prop("disabled", true);
     } else {
       $("output.counter", $(this).parents("form")).removeClass("error")
-      $("button", $(this).parents("form")).prop("disabled", false);
+      // $("button", $(this).parents("form")).prop("disabled", false);
     }
 
   });
