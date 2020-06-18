@@ -13,22 +13,23 @@ main {
 }
 
 @media (max-width: 768px) {
-//  nav {
-//    background-color: #d8a74463;
-//    background-image: url("/images/arches.png");
-//    height: 80px;
-//    border: 1px dashed red
-
-//  }
+ nav {
+   background: transparent;
+   height: 3em;
+ }
  main {
    width: 100%
  }
  .profile {
-   margin: 0
- }
- .profile img {
-   margin-top: 0;
-   border: 1px dashed red
+  padding-top: 2.5em; 
+  margin: 0;
+  img {
+    margin-top: 0;
+    filter: invert(100%);
+   }
+  h2 {
+    filter: invert(100%);
+  }
  }
  section {
    width: 90%;

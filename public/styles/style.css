@@ -50,7 +50,7 @@ nav {
   justify-content: flex-end;
   align-content: center;
   background-color: #02010A;
-  height: 120px;
+  height: 4em;
   font-size: 24px;
   position: fixed;
   top: 0;
@@ -254,6 +254,13 @@ output.counter.error {
   align-items: center;
 }
 
+#tweet div img {
+  max-height: 2em;
+  width: auto;
+  filter: invert(100%);
+  margin-right: .2em;
+}
+
 #tweet h5 {
   display: none;
 }
@@ -305,15 +312,23 @@ main {
 }
 
 @media (max-width: 768px) {
+  nav {
+    background: transparent;
+    height: 3em;
+  }
   main {
     width: 100%;
   }
   .profile {
+    padding-top: 2.5em;
     margin: 0;
   }
   .profile img {
     margin-top: 0;
-    border: 1px dashed red;
+    filter: invert(100%);
+  }
+  .profile h2 {
+    filter: invert(100%);
   }
   section {
     width: 90%;

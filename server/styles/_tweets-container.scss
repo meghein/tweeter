@@ -21,6 +21,12 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    img {
+      max-height: 2em;
+      width: auto;
+      filter: invert(100%);
+      margin-right: .2em;
+    }
   }
   h5 {
     display: none;
