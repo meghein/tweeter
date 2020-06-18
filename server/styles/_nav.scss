@@ -1,9 +1,11 @@
+@import "variables";
+
 nav {
   display: flex;
   justify-content: flex-end;
   align-content: center;
-  /* height: 120px; */
-  color: #ffffff;
+  background-color: $nav;
+  height: 120px;
   font-size: 24px;
   position: fixed;
   top: 0;
@@ -25,9 +27,14 @@ span.title {
   display: flex;
   flex-direction: column;
   align-content: center;
+  background: transparent;
+  // border-image-outset: ;
+  border: none;
+  outline: none;
   justify-content: center;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: .7em;
+  color: $text;
 }
 
 #write-tweet i {

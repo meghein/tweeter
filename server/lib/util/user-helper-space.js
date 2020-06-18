@@ -8,9 +8,6 @@ const md5 = require('md5');
 
 module.exports = {
   generateRandomUser: () => {
-    Chance.gender({
-      extraGenders: ['Agender', 'Genderqueer', 'Trans', 'Pangender']
-    });
     const gender    = chance.gender();
     const firstName = chance.first({gender: gender});
     const lastName  = chance.last();
@@ -32,8 +29,8 @@ module.exports = {
    
     const avatars = {
     
-      Female: ["https://i.imgur.com/nlhLi3I.png","https://i.imgur.com/z5LNkkB.png","https://i.imgur.com/v0JXau2.png","https://i.imgur.com/lRUnDgU.png", "https://i.imgur.com/3GvwNBf.png"],
-      Male: ["https://i.imgur.com/73hZDYK.png","https://i.imgur.com/5fUVPRP.png","https://i.imgur.com/DVpDmdR.png","https://i.imgur.com/2WZtOD6.png", "https://i.imgur.com/ilT4JDe.png"]
+      Female: ["/avatars/005-space ship.png","/avatars/009-alien.png","/avatars/012-alien.png","/avatars/014-alien.png", "/avatars/015-alien.png", "/avatars/031-alien.png", "/avatars/035-alien.png", "/avatars/040-alien.png", "/avatars/047-alien.png", "/avatars/050-alien.png", "/avatars/001-abduction.png"],
+      Male: ["/avatars/019-alien.png","/avatars/020-alien.png","/avatars/021-alien.png","/avatars/023-alien.png", "/avatars/029-abducting.png", "/avatars/032-alien.png", "/avatars/036-alien.png", "/avatars/037-alien.png", "/avatars/039-alien.png", "/avatars/041-alien.png"]
     
     }
     

@@ -3,21 +3,23 @@
 @import "nav";
 @import "new-tweet";
 @import "tweets-container";
+@import "variables";
 
 main {
   width: 90%;
   margin: auto;
   background-color: inherit;
+  background-image: inherit;
 }
 
 @media (max-width: 768px) {
- nav {
-   background-color: #d8a74463;
-   background-image: url("/images/arches.png");
-   height: 80px;
-   border: 1px dashed red
+//  nav {
+//    background-color: #d8a74463;
+//    background-image: url("/images/arches.png");
+//    height: 80px;
+//    border: 1px dashed red
 
- }
+//  }
  main {
    width: 100%
  }
@@ -35,9 +37,9 @@ main {
 }
 
 @media (min-width: 769px) and (max-width: 1023px){
- nav {
-   background-color: #4056A1;
- }
+//  nav {
+//    background-color: #4056A1;
+//  }
  main {
    width: 100%
  }
@@ -51,9 +53,9 @@ main {
 }
 
 @media (min-width: 1024px) {
- nav {
-   background-color: #4056A1;
- }
+//  nav {
+//    background-color: #4056A1;
+//  }
  main {
    display: flex;
    flex-direction: row;

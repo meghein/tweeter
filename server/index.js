@@ -8,9 +8,10 @@ const bodyParser    = require("body-parser");
 const sass          = require("node-sass-middleware");
 const app           = express();
 
-app.use("/styles", sass({
+app.use(sass({
   src: __dirname + "/styles",
-  dest: __dirname + "/public/styles",
+  dest: "public/styles",
+  prefix: '/styles',
   debug: true,
   outputStyle: 'expanded'
 }));

@@ -20,7 +20,10 @@ const createTweetElement = function(tweet) {
   const $tweetElement = `
     <article id="tweet">
       <header>
-        <h4><img src="${tweet.user.avatars}">${tweet.user.name}</h4>
+        <div class="user">
+          <img src="${tweet.user.avatars}">
+          <h4>${tweet.user.name}</h4>
+        </div>
         <h5>${tweet.user.handle}</h5>
       </header>
       <section class="quote">"${escape(tweet.content.text)}"</section>
@@ -34,8 +37,6 @@ const createTweetElement = function(tweet) {
   `
   return $tweetElement;
 };
-
-
 
 const loadTweets = function() {
   $.ajax({
@@ -58,13 +59,13 @@ const tweetValidation = function(text) {
   } else {
     return true;
   }
-}
+};
 
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 const alertMessage = function(message) {
   $('.alert').text(message);
@@ -78,6 +79,11 @@ const alertMessage = function(message) {
   });
 };
 
+$(document).ready(function(){
+  $("#write-tweet").click(function(){
+    $("form").slideToggle();
+  });
+});
 
 $(document).ready(() => {
   loadTweets();
@@ -101,4 +107,4 @@ $(document).ready(() => {
       console.log('Client input invalid')
     }
   })
-})
+});

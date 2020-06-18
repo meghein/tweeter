@@ -12,15 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
 
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" /> -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css">
+      <!-- <link rel="stylesheet" href="../server/styles/style.scss"> -->
     <!-- CSS for Icons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    
+
     
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -31,50 +33,52 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/auto-expand-textarea.js"></script>
-    <script type="text/javascript" src="/scripts/hover.js"></script>
 
+    <!-- <style>
+      article * {
+        border: 1px dashed darkgrey;
+      }
+    </style> -->
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="title">tweeter</span>
-      <div id="write-tweet">
+      <button id="write-tweet">
         <span><b>Write</b> a tweet</span>
         <i id="bounce" class="fa fa-angle-double-down" aria-hidden="true"></i>
-      </div>
+      </button>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
 
       <header class="profile">
-        <div>
-            <img src="/images/profile-hex.png"> 
-        </div>
+        <!-- <div id="avatar"> -->
+            <img class= "avatar" src="/images/alien.png"> 
+            <!-- <img id="randomImages" alt="#"> -->
+        <!-- </div> -->
         <br>
         <div>
-            <h2>Your Name</h2>
+            <h2>Major Tom</h2>
         </div>
       </header>
 
       <!-- Form to input new tweet -->
       <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
         <div class="alert"></div>
-        <h4>What are you humming about?</h4>
         <form method="POST" action="/tweets">
-          <!-- <label for="tweet-text">What are you humming about?</label> -->
+          <h4>What are you humming about?</h4>
           <textarea  class="autoExpand" name="text" id="tweet-text" placeholder="Compose your tweet here!"></textarea>
           <div class="footer">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
-      
+
         <!-- Posted tweets -->
-        <div id="tweets-container">
-        </div>
+        <div id="tweets-container"></div>
 
       </section>
 
