@@ -12,17 +12,16 @@
     tweetsArr.push(createTweetElement(tweet));
   }
   // takes return value and appends it to the tweets container
-  $(document).ready(() => {
-    $('#tweets-container').append(tweetsArr);
-  })
+  $('#tweets-container').append(tweetsArr);
+
 };
 
 const createTweetElement = function(tweet) {
   const $tweetElement = `
-    <article>
+    <article id="tweet">
       <header>
         <h4><img src="${tweet.user.avatars}">${tweet.user.name}</h4>
-        <h5>${tweet.user.handle}</h5>
+        <h5 class="handle">${tweet.user.handle}</h5>
       </header>
       <section class="quote">"${escape(tweet.content.text)}"</section>
       <footer>

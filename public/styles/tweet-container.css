@@ -9,11 +9,8 @@
 
 }
 
-#tweets-container.shadow {
-  box-shadow: 10px 10px grey;
-}
 
-#tweets-container article header {
+#tweets-container header {
   height: 20%;
   margin: 0px;
   display: flex;
@@ -23,33 +20,47 @@
   background-color: inherit;
 }
 
-#tweets-container article header img {
+#tweets-container img {
   height: 50px
 }
 
-#tweets-container article header h5 {
+#tweet h5 {
   display: none;
 }
 
-#tweets-container article.quote {
+#tweet:hover h5 {
+  display: block;
+}
+
+#tweet:hover {
+  box-shadow: 10px 10px #4056A1;
+}
+
+#tweets-container .quote {
   display: flex;
   align-items: baseline;
   border-bottom: 5px solid;
   height: 150%;
+
+  /* style for handling long/run-on words */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
-#tweets-container article footer {
+#tweets-container footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   height: 10%;
 }
 
-#tweets-container article footer h6{
+#tweets-container footer h6{
   margin-right: auto
 }
 
-#tweets-container article footer button{
+#tweets-container footer button{
   border: none;
   background-color: inherit;
   color: inherit;
