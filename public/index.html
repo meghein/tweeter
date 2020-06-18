@@ -4,6 +4,9 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <!-- Disable viewport zooming -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
@@ -16,8 +19,8 @@
     <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
     <!-- CSS for Icons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- CSS for Avatars -->
-    <!-- <link rel="stylesheet" type="text/css" href="your_website_domain/css_root/flaticon.css"> -->
+
+    
     
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -36,21 +39,24 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="title">tweeter</span>
-      <span class="tweet"><b>Write</b> a tweet</span>
+      <div id="write-tweet">
+        <span><b>Write</b> a tweet</span>
+        <i id="bounce" class="fa fa-angle-double-down" aria-hidden="true"></i>
+      </div>
     </nav>
-
-    <header class="profile">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>Your Name</h2>
-      </div>
-  </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+      <header class="profile">
+        <div>
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div>
+            <h2>Your Name</h2>
+        </div>
+      </header>
 
       <!-- Form to input new tweet -->
       <section class="new-tweet">
@@ -65,11 +71,13 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      
+        <!-- Posted tweets -->
+        <div id="tweets-container">
+        </div>
+
       </section>
 
-      <!-- Posted tweets -->
-      <section id="tweets-container">
-      </section>
 
     </main>
   </body>

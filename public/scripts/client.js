@@ -21,7 +21,7 @@ const createTweetElement = function(tweet) {
     <article id="tweet">
       <header>
         <h4><img src="${tweet.user.avatars}">${tweet.user.name}</h4>
-        <h5 class="handle">${tweet.user.handle}</h5>
+        <h5>${tweet.user.handle}</h5>
       </header>
       <section class="quote">"${escape(tweet.content.text)}"</section>
       <footer>
@@ -35,19 +35,7 @@ const createTweetElement = function(tweet) {
   return $tweetElement;
 };
 
-// const generateRandomProfile = function(quote) {
-//   const randomProfile = `{
-//     user: {
-//     name: "name",
-//     avatars: "https://i.imgur.com/nlhLi3I.png",
-//     handle: "@handle" },
-//     content: {
-//       text: ${quote}
-//     },
-//     "created_at": ${new Date().getTime()}
-//   }`;
-//   return randomProfile;
-// };
+
 
 const loadTweets = function() {
   $.ajax({

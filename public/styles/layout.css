@@ -37,3 +37,19 @@ It should have the same colour background as the <body> element
    margin: auto;
    background-color: inherit;
  }
+
+@media (min-width: 1024px) {
+  main {
+     display: flex;
+     flex-direction: row;
+  }
+  header.profile {
+    flex-shrink: 5;
+    margin-right: 2em;
+  }
+  
+  section {
+    flex-direction: column;
+     margin-top: 120px;
+  }
+ }

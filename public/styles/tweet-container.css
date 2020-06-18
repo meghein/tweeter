@@ -1,27 +1,25 @@
-#tweets-container article {
+#tweet {
   display: flex;
   flex-direction: column;
   background-color: inherit;
+  height: 30%;
   border: 5px solid;
-  padding: 5px;
+  padding: 10px;
   margin: 2px;
   margin-bottom: 1em;
-
 }
 
 
-#tweets-container header {
-  height: 20%;
-  margin: 0px;
+#tweet header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: inherit;
+  /* height: 2em; */
 }
 
-#tweets-container img {
-  height: 50px
+#tweet img {
+  /* height: 2em; */
 }
 
 #tweet h5 {
@@ -36,12 +34,11 @@
   box-shadow: 10px 10px #4056A1;
 }
 
-#tweets-container .quote {
+#tweet .quote {
   display: flex;
   align-items: baseline;
   border-bottom: 5px solid;
-  height: 150%;
-
+  /* height: 3em; */
   /* style for handling long/run-on words */
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -49,18 +46,19 @@
   hyphens: auto;
 }
 
-#tweets-container footer {
+#tweet footer {
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
-  height: 10%;
+  /* height: 1em; */
 }
 
-#tweets-container footer h6{
-  margin-right: auto
+#tweet footer h6{
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px
 }
 
-#tweets-container footer button{
+#tweet footer button{
   border: none;
   background-color: inherit;
   color: inherit;

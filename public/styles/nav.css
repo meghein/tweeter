@@ -1,13 +1,7 @@
-/* Be 120 pixels in height
-Be the full width of the viewport.
-Have #4056A1 as its default background colour.
-Have #FFFFF as its default font colour
-The <span> within the <nav> has Bungee as it's default font-family
-The inner content should not be touching the viewport edge on any side and should remain 1.5ems away from all edges */
-
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  align-content: center;
   height: 120px;
   color: #ffffff;
   background-color: #4056A1;
@@ -18,14 +12,70 @@ nav {
  }
 
 nav span {
-  margin: 1.5em;
+  margin: 1em;
 }
 
-.title {
+span.title {
+  display: flex;
+  align-content: center;
+  margin-right: auto;
   font-family: 'Bungee', cursive;
 }
 
-.tweet {
-  font-family: 'Source Sans Pro', sans-serif; 
+#write-tweet {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: .7em;
 }
 
+#write-tweet i {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5em;
+  color: red;
+}
+
+
+/* Bounce animation code sourced from: "https://gist.github.com/gubi/8483199" */
+.fa-angle-double-down {
+  display: inline-block;
+  position: relative;
+  -moz-animation: bounce 1s infinite linear;
+  -o-animation: bounce 1s infinite linear;
+  -webkit-animation: bounce 1s infinite linear;
+  animation: bounce 1s infinite linear;
+}
+
+@-webkit-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@-moz-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@-o-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@-ms-keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
+@keyframes bounce {
+  0% { top: 0; }
+  50% { top: -0.2em; }
+  70% { top: -0.3em; }
+  100% { top: 0; }
+}
