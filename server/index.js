@@ -5,7 +5,15 @@
 const PORT          = 8080;
 const express       = require("express");
 const bodyParser    = require("body-parser");
+const sass          = require("node-sass-middleware");
 const app           = express();
+
+app.use("/styles", sass({
+  src: __dirname + "/styles",
+  dest: __dirname + "/public/styles",
+  debug: true,
+  outputStyle: 'expanded'
+}));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));

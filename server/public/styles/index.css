@@ -1,0 +1,344 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* The header should have a height of 400px and be 100% the width of it's parent container
+The avatar should be centered vertically and horizontally (Hint: the justify-content and align-items properties are helpful for centering things if you're using Flexbox.)
+The name should be centered below the avatar
+The background should be a different colour than the nav and the body
+The background-image should be a transparent pattern. Feel free to use this tool to assist: https://www.transparenttextures.com/ */
+header.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  margin-top: 120px;
+  height: 15em;
+  width: 100%;
+  background-color: #d8a74463;
+  background-image: url("/images/arches.png");
+}
+
+header.profile img {
+  margin-top: 10px;
+}
+
+header.profile h2 {
+  margin-top: 0px;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  /* height: 120px; */
+  color: #ffffff;
+  font-size: 24px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav span {
+  margin: 1em;
+}
+
+span.title {
+  display: flex;
+  align-content: center;
+  margin-right: auto;
+  font-family: 'Bungee', cursive;
+}
+
+#write-tweet {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: .7em;
+}
+
+#write-tweet i {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5em;
+  color: red;
+}
+
+/* Bounce animation code sourced from: "https://gist.github.com/gubi/8483199" */
+.fa-angle-double-down {
+  display: inline-block;
+  position: relative;
+  -moz-animation: bounce 1s infinite linear;
+  -o-animation: bounce 1s infinite linear;
+  -webkit-animation: bounce 1s infinite linear;
+  animation: bounce 1s infinite linear;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -0.2em;
+  }
+  70% {
+    top: -0.3em;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@-moz-keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -0.2em;
+  }
+  70% {
+    top: -0.3em;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@-o-keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -0.2em;
+  }
+  70% {
+    top: -0.3em;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@-ms-keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -0.2em;
+  }
+  70% {
+    top: -0.3em;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: -0.2em;
+  }
+  70% {
+    top: -0.3em;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+textarea {
+  overflow: hidden;
+  width: 100%;
+  border-width: 0px;
+  background-color: inherit;
+}
+
+#tweet-text {
+  border-bottom-style: solid;
+  border-bottom-width: 5px;
+  font-size: 20px;
+}
+
+.new-tweet h4 {
+  margin-top: 1em;
+  margin-bottom: 0px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
+
+.footer button {
+  background-color: #4056A1;
+  color: #ffffff;
+  font-size: 20px;
+  border: 5px solid #4056A1;
+}
+
+output.counter.error {
+  color: #FF0000;
+}
+
+.alert {
+  display: none;
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+  border: 5px solid #FF0000;
+  color: #FF0000;
+  font-size: .8em;
+}
+
+#tweet {
+  display: flex;
+  flex-direction: column;
+  background-color: inherit;
+  height: 30%;
+  border: 5px solid;
+  padding: 10px;
+  margin: 2px;
+  margin-bottom: 1em;
+}
+
+#tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* height: 2em; */
+}
+
+/* #tweet img {
+  height: 2em;
+} */
+#tweet h5 {
+  display: none;
+}
+
+#tweet:hover h5 {
+  display: block;
+}
+
+#tweet:hover {
+  box-shadow: 10px 10px #4056A1;
+}
+
+#tweet .quote {
+  display: flex;
+  align-items: baseline;
+  border-bottom: 5px solid;
+  /* height: 3em; */
+  /* style for handling long/run-on words */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+#tweet footer {
+  display: flex;
+  justify-content: flex-end;
+  /* height: 1em; */
+}
+
+#tweet footer h6 {
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#tweet footer button {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  background-color: inherit;
+}
+
+@media (max-width: 768px) {
+  nav {
+    background-color: #d8a74463;
+    background-image: url("/images/arches.png");
+    height: 80px;
+    border: 1px dashed red;
+  }
+  main {
+    width: 100%;
+  }
+  .profile {
+    margin: 0;
+  }
+  .profile img {
+    margin-top: 0;
+    border: 1px dashed red;
+  }
+  section {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  nav {
+    background-color: #4056A1;
+  }
+  main {
+    width: 100%;
+  }
+  .profile {
+    margin: 0;
+  }
+  section {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav {
+    background-color: #4056A1;
+  }
+  main {
+    display: flex;
+    flex-direction: row;
+  }
+  header.profile {
+    flex-shrink: 5;
+    margin-right: 2em;
+  }
+  section {
+    flex-direction: column;
+    margin-top: 120px;
+  }
+}
