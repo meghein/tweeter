@@ -1,4 +1,4 @@
-article {
+#tweets-container article {
   display: flex;
   flex-direction: column;
   background-color: inherit;
@@ -9,11 +9,11 @@ article {
 
 }
 
-article.shadow {
+#tweets-container.shadow {
   box-shadow: 10px 10px grey;
 }
 
-article header {
+#tweets-container article header {
   height: 20%;
   margin: 0px;
   display: flex;
@@ -23,33 +23,33 @@ article header {
   background-color: inherit;
 }
 
-article header img {
+#tweets-container article header img {
   height: 50px
 }
 
-article header h5 {
+#tweets-container article header h5 {
   display: none;
 }
 
-article .quote {
+#tweets-container article.quote {
   display: flex;
   align-items: baseline;
   border-bottom: 5px solid;
   height: 150%;
 }
 
-article footer {
+#tweets-container article footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   height: 10%;
 }
 
-article footer h6{
+#tweets-container article footer h6{
   margin-right: auto
 }
 
-article footer button{
+#tweets-container article footer button{
   border: none;
   background-color: inherit;
   color: inherit;

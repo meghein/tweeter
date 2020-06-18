@@ -63,10 +63,10 @@ const loadTweets = function() {
 
 const tweetValidation = function(text) {
   if (!text) {
-    alert("Invalid or Missing Text!")
+    alertMessage("⚠︎ Invalid or Missing Text! ⚠︎")
     return false;
   } else if (text.length > 140) {
-    alert("Text too long!");
+    alertMessage("⚠︎ Text too long! ⚠︎");
     return false;
   } else {
     return true;
@@ -78,6 +78,18 @@ const escape =  function(str) {
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
+
+const alertMessage = function(message) {
+  $('.alert').text(message);
+  /*animate the bar*/
+  $('.alert').slideDown(() => {
+    setTimeout(() => {
+        $('.alert').slideUp(() => {
+          $(this).remove()
+        });
+    }, 1500);
+  });
+};
 
 
 $(document).ready(() => {

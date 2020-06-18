@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("article").hover(function(){
+  $("#tweets-container").hover(function(){
     $(this).addClass("shadow");
     $(this).find("h5").show();
     }, function(){
