@@ -11,6 +11,16 @@
   },
   {
     "user": {
+      "name": "Mae Jemison",
+      "avatars": "/images/045.png",
+      "handle": "@Mae_J" },
+    "content": {
+      "text": "Once I got into space, I was feeling very comfortable in the universe. I felt like I had a right to be anywhere in this universe, that I belonged here as much as any speck of stardust, any comet, any planet"
+    },
+    "created_at": 662706000000
+  },
+  {
+    "user": {
       "name": "Carl Sagan",
       "avatars": "/images/space.png"
       ,
@@ -19,6 +29,6 @@
     "content": {
       "text": "The universe seems neither benign nor hostile, merely indifferent."
     },
-    "created_at": 4784832000000
+    "created_at": 441781200000
   }
 ]

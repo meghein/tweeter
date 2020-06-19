@@ -6,9 +6,8 @@ nav {
   align-content: center;
   background-color: $nav;
   height: 4em;
-  font-size: 24px;
-  position: fixed;
-  top: 0;
+  // font-size: 24px;
+  position: sticky;
   width: 100%;
  }
 
@@ -28,7 +27,6 @@ span.title {
   flex-direction: column;
   align-content: center;
   background: transparent;
-  // border-image-outset: ;
   border: none;
   outline: none;
   justify-content: center;
@@ -41,7 +39,7 @@ span.title {
   margin-left: auto;
   margin-right: auto;
   font-size: 1.5em;
-  color: red;
+  color: $alert;
 }
 
 

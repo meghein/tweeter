@@ -10,17 +10,12 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
-
-    <!-- App CSS -->
-    <!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" /> -->
-    <link rel="stylesheet" href="/styles/style.css" type="text/css">
-      <!-- <link rel="stylesheet" href="../server/styles/style.scss"> -->
     <!-- CSS for Icons -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- App CSS - only one stylesheet because of sass middleware. .scss files stored in /server/styles/ -->
+    <link rel="stylesheet" href="/styles/style.css" type="text/css">
+
 
 
     
@@ -29,22 +24,17 @@
 
     <!-- App JS -->
     <script src="/vendor/jquery-2.2.3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js" integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-    <script type="text/javascript" src="/scripts/auto-expand-textarea.js"></script>
+    <script type="text/javascript" src="/scripts/user-generator.js"></script>
 
-    <!-- <style>
-      article * {
-        border: 1px dashed darkgrey;
-      }
-    </style> -->
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span class="title">tweeter</span>
+      <span class="title">tweeter &nbsp;<i class="fa fa-rocket" aria-hidden="true"></i></span>
       <button id="write-tweet">
         <span><b>Write</b> a tweet</span>
         <i id="bounce" class="fa fa-angle-double-down" aria-hidden="true"></i>
@@ -54,23 +44,19 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
 
+      <!-- Header with current user (randomly generated) -->
       <header class="profile">
-        <!-- <div id="avatar"> -->
-            <img class= "avatar" src="/images/alien.png"> 
-            <!-- <img id="randomImages" alt="#"> -->
-        <!-- </div> -->
+        <div id="avatar"></div>
         <br>
-        <div>
-            <h2>Major Tom</h2>
-        </div>
+        <div id="name"></div>
       </header>
 
       <!-- Form to input new tweet -->
       <section class="new-tweet">
         <div class="alert"></div>
         <form method="POST" action="/tweets">
-          <h4>What are you humming about?</h4>
-          <textarea  class="autoExpand" name="text" id="tweet-text" placeholder="Compose your tweet here!"></textarea>
+          <h3>Broadcast your thoughts to the <i>universal</i> wide web!</h3>
+          <textarea  name="text" id="tweet-text" placeholder="Post your interstellar tweet here..."></textarea>
           <div class="footer">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -79,10 +65,10 @@
 
         <!-- Posted tweets -->
         <div id="tweets-container"></div>
-
       </section>
 
-
     </main>
+    
   </body>
+
 </html>

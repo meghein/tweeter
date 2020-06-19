@@ -4,21 +4,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-content: center;
-    padding-top: 120px;
     height: 40%;
     width: 100%;
     background-color: $header;
-    background-image: url("https://www.transparenttextures.com/patterns/black-orchid.png");
+    background-image: $header-image;
+    h2 {
+      margin-top: 0;
+      color: $black;
+    }
   }
 
-.avatar {
-  margin-top: 10px;
-  height: 35%;
-  width: 35%;
-}
-
-.profile h2 {
-  margin-top: 0px;
-  color: #000000;
+#avatar {
+  margin-top: 1em;
+  max-height: 5em;
+  width: auto;
 }

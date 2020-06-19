@@ -1,10 +1,10 @@
 /*
- * Client-side JS logic goes here
+ * Client-side JS logic here
  * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
- const renderTweets = function(tweets) {
+// Functionality to access tweets database
+const renderTweets = function(tweets) {
   const tweetsArr = [];
   // loops through tweets
   for (let tweet of tweets) {
@@ -16,6 +16,7 @@
 
 };
 
+//Created a new tweet to be added to the database
 const createTweetElement = function(tweet) {
   const $tweetElement = `
     <article id="tweet">
@@ -34,37 +35,40 @@ const createTweetElement = function(tweet) {
         <button type="flag"><i class="fa fa-flag" aria-hidden="true"></i></button>
       </footer>
     </article>
-  `
+  `;
   return $tweetElement;
 };
 
+//Loads tweets on the webpage and uses reverse() to display newest tweet first
 const loadTweets = function() {
   $.ajax({
     url: '/tweets',
     method: 'GET',
     dataType: 'JSON'
   }).then(function(response) {
-    const reverseData = response.reverse()
-    renderTweets(reverseData)
-  })
+    const reverseData = response.reverse();
+    renderTweets(reverseData);
+  });
 };
 
-const tweetValidation = function(text) {
-  if (!text) {
-    alertMessage("⚠︎ Invalid or Missing Text! ⚠︎")
-    return false;
-  } else if (text.length > 140) {
-    alertMessage("⚠︎ Text too long! ⚠︎");
-    return false;
-  } else {
-    return true;
-  }
-};
-
+// Escape helper function to account for xss code. Used in the createTweetElement function
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
+};
+
+//Function to render an error message if tweet is invalid
+const tweetValidation = function(text) {
+  if (!text) {
+    alertMessage("⚠︎ No message recieved! Please try again... ⚠︎");
+    return false;
+  } else if (text.length > 140) {
+    alertMessage("⚠︎ This message is too long to post! Please keep to our arbitrary 140char limit. ⚠︎");
+    return false;
+  } else {
+    return true;
+  }
 };
 
 const alertMessage = function(message) {
@@ -72,15 +76,18 @@ const alertMessage = function(message) {
   /*animate the bar*/
   $('.alert').slideDown(() => {
     setTimeout(() => {
-        $('.alert').slideUp(() => {
-          $(this).remove()
-        });
+      $('.alert').slideUp(() => {
+        $(this).remove()
+      });
     }, 1500);
   });
 };
 
-$(document).ready(function(){
-  $("#write-tweet").click(function(){
+/////////////////////////////////////////////////////////
+// Ajax/Jquery functionality to load elements on page //
+
+$(document).ready(function() {
+  $("#write-tweet").click(function() {
     $("form").slideToggle();
   });
 });
@@ -91,20 +98,20 @@ $(document).ready(() => {
     event.preventDefault();
     const text = $("#tweet-text").val();
     if (tweetValidation(text)) {
-    $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: $("#tweet-text").serialize(),
-      dataType: "text"
-    }).then(() => {
-      $("#tweets-container").empty()
-      $("form").trigger('reset');
-      $(".counter").text('140')
-      loadTweets()
-      console.log('Ajax request successful. Client input posted')
-    });
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: $("#tweet-text").serialize(),
+        dataType: "text"
+      }).then(() => {
+        $("#tweets-container").empty();
+        $("form").trigger('reset');
+        $(".counter").text('140');
+        loadTweets();
+        console.log('Ajax request successful. Client input posted');
+      });
     } else {
-      console.log('Client input invalid')
+      console.log('Client input invalid');
     }
-  })
+  });
 });

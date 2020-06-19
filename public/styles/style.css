@@ -26,23 +26,21 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: center;
-  padding-top: 120px;
   height: 40%;
   width: 100%;
   background-color: #4F518C;
   background-image: url("https://www.transparenttextures.com/patterns/black-orchid.png");
 }
 
-.avatar {
-  margin-top: 10px;
-  height: 35%;
-  width: 35%;
+.profile h2 {
+  margin-top: 0;
+  color: #000000;
 }
 
-.profile h2 {
-  margin-top: 0px;
-  color: #000000;
+#avatar {
+  margin-top: 1em;
+  max-height: 5em;
+  width: auto;
 }
 
 nav {
@@ -51,9 +49,7 @@ nav {
   align-content: center;
   background-color: #02010A;
   height: 4em;
-  font-size: 24px;
-  position: fixed;
-  top: 0;
+  position: sticky;
   width: 100%;
 }
 
@@ -85,7 +81,7 @@ span.title {
   margin-left: auto;
   margin-right: auto;
   font-size: 1.5em;
-  color: red;
+  color: #FF0000;
 }
 
 /* Bounce animation code sourced from: "https://gist.github.com/gubi/8483199" */
@@ -181,20 +177,19 @@ form {
 textarea {
   overflow: hidden;
   width: 100%;
-  border-width: 0px;
+  border-width: 0;
   background-color: inherit;
 }
 
 #tweet-text {
   border-bottom-style: solid;
-  border-bottom-width: 5px;
-  font-size: 20px;
-  color: #FF0000;
+  border-bottom-width: .1em;
+  color: #FFFFFF;
 }
 
 .new-tweet h4 {
   margin-top: 1em;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .footer {
@@ -206,9 +201,8 @@ textarea {
 
 .footer button {
   background-color: #4056A1;
-  color: #ffffff;
-  font-size: 20px;
-  border: 10px solid #4056A1;
+  color: #FFFFFF;
+  border: 0.2em solid #4056A1;
   border-radius: .5em;
   outline: none;
 }
@@ -220,9 +214,9 @@ output.counter.error {
 .alert {
   display: none;
   text-align: center;
-  margin: 10px;
-  padding: 5px;
-  background-color: #22007C;
+  margin: .2em;
+  padding: .1em;
+  background-color: #4056A1;
   border: 5px solid #FF0000;
   border-radius: .5em;
   color: #FF0000;
@@ -235,7 +229,7 @@ output.counter.error {
   background-color: #141052;
   opacity: 0.8;
   height: 30%;
-  border: 5px solid;
+  border: .1em solid;
   padding: .5em;
   margin: 1em;
 }
@@ -270,16 +264,14 @@ output.counter.error {
 }
 
 #tweet:hover {
-  box-shadow: 10px 10px #4056A1;
+  box-shadow: 0.5em 0.5em #4056A1;
 }
 
 #tweet .quote {
   display: flex;
   align-items: baseline;
-  border-bottom: 5px solid;
+  border-bottom: .1em solid;
   margin-top: 2em;
-  /*height: 3em; */
-  /* style for handling long/run-on words */
   overflow-wrap: break-word;
   word-wrap: break-word;
   word-break: break-word;
@@ -294,14 +286,19 @@ output.counter.error {
 
 #tweet footer h6 {
   margin-right: auto;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 #tweet footer button {
   border: none;
   background-color: inherit;
   color: inherit;
+  display: none;
+}
+
+#tweet:hover button {
+  display: block;
 }
 
 main {
@@ -313,14 +310,15 @@ main {
 
 @media (max-width: 768px) {
   nav {
-    background: transparent;
+    background-color: #4F518C;
+    background-image: url("https://www.transparenttextures.com/patterns/black-orchid.png");
     height: 3em;
   }
   main {
     width: 100%;
   }
   .profile {
-    padding-top: 2.5em;
+    padding-top: 0;
     margin: 0;
   }
   .profile img {
@@ -355,11 +353,9 @@ main {
     flex-direction: row;
   }
   header.profile {
-    flex-shrink: 5;
     margin-right: 2em;
   }
   section {
     flex-direction: column;
-    margin-top: 120px;
   }
 }

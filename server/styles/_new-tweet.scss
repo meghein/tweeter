@@ -1,5 +1,6 @@
 @import "variables";
 
+// display triggered by "write-tweet" button, default none when page is loaded.
 form {
   display: none;
   margin-bottom: 1em;
@@ -8,20 +9,19 @@ form {
 textarea {
   overflow: hidden;
   width: 100%;
-  border-width: 0px;
+  border-width: 0;
   background-color: inherit;
 }
 
 #tweet-text {
   border-bottom-style: solid;
-  border-bottom-width: 5px;
-  font-size: 20px;
-  color: #FF0000;
+  border-bottom-width: .1em;
+  color: $text;
 }
 
 .new-tweet h4 {
   margin-top: 1em;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .footer {
@@ -32,27 +32,27 @@ textarea {
 }
 
 .footer button {
-  background-color: #4056A1;
-  color: #ffffff;
-  font-size: 20px;
-  border: 10px solid #4056A1;
+  background-color: $shadow;
+  color: $text;
+  // font-size: 1em;
+  border: .2em solid $shadow;
   border-radius: .5em;
   outline: none;
 }
 
 output.counter.error {
-  color: 	#FF0000;
+  color: 	$alert;
 }
 
 .alert {
   display: none;
   text-align: center;
-  margin: 10px;
-  padding: 5px;
+  margin: .2em;
+  padding: .1em;
   background-color: $shadow;
-  border: 5px solid #FF0000;
+  border: 5px solid $alert;
   border-radius: .5em;
-  color: #FF0000;
+  color: $alert;
   font-size: 1.5em;
 
 }
