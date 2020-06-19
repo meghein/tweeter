@@ -313,6 +313,7 @@ main {
     background-color: #4F518C;
     background-image: url("https://www.transparenttextures.com/patterns/black-orchid.png");
     height: 3em;
+    font-size: .8em;
   }
   main {
     width: 100%;
@@ -320,17 +321,27 @@ main {
   .profile {
     padding-top: 0;
     margin: 0;
+    height: 3em;
+  }
+  .profile br {
+    display: none;
+  }
+  .profile #avatar {
+    margin-top: 0;
+    max-height: 2em;
+    padding-bottom: .2em;
   }
   .profile img {
-    margin-top: 0;
     filter: invert(100%);
   }
   .profile h2 {
+    font-size: .5em;
     filter: invert(100%);
   }
   section {
     width: 90%;
     margin: auto;
+    font-size: .7em;
   }
 }
 
